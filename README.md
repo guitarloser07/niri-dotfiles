@@ -23,7 +23,7 @@ fully replaces `/etc/niri/config.kdl`, so keep this copy complete.
 ## Apply on a fresh rebase
 
 ```sh
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply <your-github-user>/niri-dotfiles
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply guitarloser07/niri-dotfiles
 ```
 
 ## Iterate
