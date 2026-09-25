@@ -3,7 +3,6 @@
 // Check the wiki for a full description of the configuration:
 // https://niri-wm.github.io/niri/Configuration:-Introduction
 
-include optional=true "noctalia.kdl"
 
 // Input device configuration.
 // Find the full list of options on the wiki:
@@ -635,3 +634,5 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 }
+
+include "noctalia.kdl"

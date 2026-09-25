@@ -1,4 +1,3 @@
-@import url("noctalia.css");
 
 /* Square window corners to match Niri's square focus ring. */
 /* Kept after the Noctalia import so it wins over the theme. */
@@ -10,3 +9,5 @@ window, dialog, decoration, .background, .csd, .solid-csd {
 window decoration, window .titlebar, window headerbar {
   border-radius: 0;
 }
+
+@import url("noctalia.css");
