@@ -1,26 +1,120 @@
-[theme]
-mode    = "dark"
-source  = "builtin"
-builtin = "Gruvbox"
+[backdrop]
+blur_intensity = 0.5
+enabled = true
+tint_intensity = 0.29999999999999999
 
 [bar.main]
-position              = "top"
-margin_h              = 0
-margin_ends           = 0
-margin_edge           = 0
-radius                = 0
-concave_edge_corners  = false
+concave_edge_corners = false
+margin_edge = 0
+margin_ends = 0
+margin_h = 0
+position = "top"
+radius = 0
 
-# Icon-only bar widgets (no % / SSID / device names in the bar itself;
-# full details remain in tooltips and Control Center).
-[widget.volume]
-show_label = false
+[brightness]
+sync_all_monitors = true
 
-[widget.network]
-show_label = false
+[hot_corners]
+delay_ms = 500
+enabled = true
 
-[widget.brightness]
-show_label = false
+    [hot_corners.bottom_left]
+    action = "command"
+    command = "niri msg action power-off-monitors"
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = true
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    locked_timeout = 60.0
+    timeout = 660.0
+
+[location]
+address = "Denton, Texas"
+
+[lockscreen_widgets]
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 768.0
+    cy = 778.0
+    output = "eDP-1"
+    placement_height = 960.0
+    placement_width = 1536.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[shell]
+password_style = "random"
+
+    [shell.animation]
+    speed = 2.0000000298023224
+
+[theme]
+builtin = "Gruvbox"
+community_palette = "GruvboxAlt"
+mode = "dark"
+source = "community"
+wallpaper_scheme = "m3-rainbow"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "kitty", "niri", "qt" ]
+    community_ids = [ "opencode", "tauon", "neovim", "steam" ]
+    enable_builtin_templates = true
+    enable_community_templates = true
+
+[wallpaper]
+directory = "/usr/share/backgrounds"
+enabled = true
+fill_mode = "cover"
+
+    [wallpaper.default]
+    path = "/usr/share/backgrounds/2-flower-basket.webp"
+
+    [wallpaper.last]
+    path = "/usr/share/backgrounds/2-flower-basket.webp"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/usr/share/backgrounds/2-flower-basket.webp"
+
+[weather]
+unit = "imperial"
 
 [widget.battery]
 show_label = false
@@ -28,30 +122,17 @@ show_label = false
 [widget.bluetooth]
 show_label = false
 
-# Compact media widget: circular artwork only, never text.
-# Idle shows just the disc icon (no "Nothing playing" string).
-[widget.media]
-album_art_only = true
+[widget.brightness]
+show_label = false
 
-# 12-hour clock (e.g. "1:00 PM" instead of "13:00").
 [widget.clock]
 format = "{:%-I:%M %p}"
 
-[theme.templates]
-enable_builtin_templates   = true
-builtin_ids                = ["kitty", "gtk3", "gtk4", "qt", "btop", "niri"]
-enable_community_templates = true
-community_ids              = ["tauon"]
+[widget.media]
+album_art_only = true
 
-[wallpaper]
-enabled   = true
-directory = "/usr/share/backgrounds"
-fill_mode = "cover"
+[widget.network]
+show_label = false
 
-# Blurred overview wallpaper (Niri Option 1).
-# Renders a blurred/tinted copy of the wallpaper for Niri's overview.
-# Requires the noctalia-backdrop layer-rule in the Niri config.
-[backdrop]
-enabled        = true
-blur_intensity = 0.5
-tint_intensity = 0.3
+[widget.volume]
+show_label = false
